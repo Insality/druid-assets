@@ -1,13 +1,20 @@
-# Welcome to Defold
+# Druid assets
 
-This project was created from the "empty" project template.
+## Overview
 
-The settings in ["game.project"](defold://open?path=/game.project) are all the default. A bootstrap empty ["main.collection"](defold://open?path=/main/main.collection) is included.
 
-Check out [the documentation pages](https://defold.com/learn) for examples, tutorials, manuals and API docs.
+## Online app
 
-If you run into trouble, help is available in [our forum](https://forum.defold.com).
+See (the demo application)[https://insality.github.io/druid-assets/] to see custom components
 
-Happy Defolding!
 
----
+## How to publish
+How to create and add your component
+
+
+## License
+
+
+## Issues and suggestions
+
+If you have any issues, questions or suggestions please [create an issue](https://github.com/Insality/druid-assets/issues) or contact me: [insality@gmail.com](mailto:insality@gmail.com)
