@@ -1,0 +1,46 @@
+local druid = require("druid.druid")
+local monarch = require("monarch.monarch")
+
+local components = {
+	{"progress rich", "progress_rich"}
+}
+
+
+local function init_components(self)
+	local prefab = gui.get_node("button")
+
+	for i = 1, #components do
+		local component = components[i]
+
+		local cloned = gui.clone_tree(prefab)
+		gui.set_text(cloned["button_text"], component[1])
+		self.druid:new_button(cloned["button"], function()
+			monarch.show(component[2])
+		end)
+
+		self.grid:add(cloned["button"])
+	end
+
+	-- self.scroll:set_border(self.grid:get_size())
+	gui.set_enabled(prefab, false)
+end
+
+
+function init(self)
+	self.druid = druid.new(self)
+
+	self.scroll = self.druid:new_scroll("scroll_content", "scroll_input")
+	self.grid = self.druid:new_grid("scroll_content", "button")
+
+	init_components(self)
+end
+
+
+function update(self, dt)
+	self.druid:update(dt)
+end
+
+
+function on_input(self, action_id, action)
+	self.druid:on_input(action_id, action)
+end

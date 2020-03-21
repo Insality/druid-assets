@@ -5,13 +5,21 @@ local component = require("druid.component")
 
 local M = component.create("progress_rich")
 
+local SCHEME = {
+	GREEN = "/progress_fill_inc",
+	RED = "/progress_fill_dec",
+	FILL = "/progress_fill",
+}
 
-function M.init(self, name, red, green, key)
+function M.init(self, template_name, key, nodes)
+	self:set_template(template_name)
+	self:set_nodes(nodes)
+
 	self.druid = self:get_druid()
 	self.style = self:get_style()
-	self.red = self.druid:new_progress(red, key)
-	self.green = self.druid:new_progress(green, key)
-	self.fill = self.druid:new_progress(name, key)
+	self.red = self.druid:new_progress(self:get_node(SCHEME.RED), key)
+	self.green = self.druid:new_progress(self:get_node(SCHEME.GREEN), key)
+	self.fill = self.druid:new_progress(self:get_node(SCHEME.FILL), key)
 end
 
 
@@ -42,6 +50,10 @@ end
 -- @tparam number to value between 0..1
 -- @tparam[opt] function callback Callback on animation ends
 function M.to(self, to, callback)
+	if self.fill.last_value == to then
+		return
+	end
+
 	if self.timer then
 		timer.cancel(self.timer)
 		self.timer = nil

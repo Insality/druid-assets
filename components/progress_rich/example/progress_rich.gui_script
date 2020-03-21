@@ -1,0 +1,36 @@
+local druid = require("druid.druid")
+local progress_rich = require("components.progress_rich.progress_rich")
+
+function init(self)
+	druid.register("progress_rich", progress_rich)
+	self.druid = druid.new(self)
+
+	local auto_progress = self.druid:new_progress_rich("auto_rich", "x")
+
+	timer.delay(3, true, function()
+		auto_progress:to(math.random())
+	end)
+
+
+	local manual_progress = self.druid:new_progress_rich("manual_rich", "x")
+
+	local progress = 1
+	self.druid:new_button("rich_inc/button", function()
+		progress = math.min(progress + 0.1, 1)
+		manual_progress:to(progress)
+	end)
+	self.druid:new_button("rich_dec/button", function()
+		progress = math.max(progress - 0.1, 0)
+		manual_progress:to(progress)
+	end)
+end
+
+
+function update(self, dt)
+	self.druid:update(dt)
+end
+
+
+function on_input(self, action_id, action)
+	self.druid:on_input(action_id, action)
+end
