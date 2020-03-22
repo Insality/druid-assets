@@ -2,7 +2,7 @@
 	"components": [
 		{
 			"collection_id": "progress_rich",
-			"title": "Proress rich",
+			"title": "Rich progress bar",
 			"desc": "Progress bar with better visual changing",
 			"author": "Insality"
 		}

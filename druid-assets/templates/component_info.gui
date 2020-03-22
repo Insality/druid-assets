@@ -441,7 +441,7 @@ nodes {
 nodes {
   position {
     x: 0.0
-    y: 7.0
+    y: 4.0
     z: 0.0
     w: 1.0
   }
@@ -452,14 +452,14 @@ nodes {
     w: 1.0
   }
   scale {
-    x: 0.8
-    y: 0.8
+    x: 0.7
+    y: 0.7
     z: 1.0
     w: 1.0
   }
   size {
-    x: 360.0
-    y: 50.0
+    x: 400.0
+    y: 60.0
     z: 0.0
     w: 1.0
   }
@@ -490,15 +490,18 @@ nodes {
     w: 1.0
   }
   adjust_mode: ADJUST_MODE_FIT
-  line_break: false
+  line_break: true
   parent: "button/button"
   layer: ""
   inherit_alpha: true
   alpha: 1.0
   outline_alpha: 1.0
   shadow_alpha: 0.0
+  overridden_fields: 1
+  overridden_fields: 3
   overridden_fields: 4
   overridden_fields: 8
+  overridden_fields: 18
   template_node_child: true
   text_leading: 1.0
   text_tracking: 0.0
@@ -698,14 +701,14 @@ nodes {
     w: 1.0
   }
   scale {
-    x: 0.4
-    y: 0.4
+    x: 0.55
+    y: 0.55
     z: 1.0
     w: 1.0
   }
   size {
-    x: 1000.0
-    y: 150.0
+    x: 800.0
+    y: 100.0
     z: 0.0
     w: 1.0
   }

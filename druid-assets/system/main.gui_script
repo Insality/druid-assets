@@ -10,9 +10,10 @@ local function init_components(self)
 		local component = components[i]
 
 		local cloned = gui.clone_tree(prefab)
-		gui.set_text(cloned["prefab/button/button_text"], component.title)
 		gui.set_text(cloned["prefab/author_text"], component.author)
-		gui.set_text(cloned["prefab/info_text"], component.desc)
+
+		self.druid:new_text(cloned["prefab/button/button_text"], component.title)
+		self.druid:new_text(cloned["prefab/info_text"], component.desc)
 
 		local is_enabled = false
 		gui.set_enabled(cloned["prefab/info_node"], is_enabled)
