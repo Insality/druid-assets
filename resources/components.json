@@ -1,0 +1,10 @@
+{
+	"components": [
+		{
+			"collection_id": "progress_rich",
+			"title": "Proress rich",
+			"desc": "Progress bar with better visual changing",
+			"author": "Insality"
+		}
+	]
+}

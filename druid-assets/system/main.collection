@@ -4,7 +4,7 @@ embedded_instances {
   id: "gui"
   data: "components {\n"
   "  id: \"main\"\n"
-  "  component: \"/druid-assets/main.gui\"\n"
+  "  component: \"/druid-assets/system/main.gui\"\n"
   "  position {\n"
   "    x: 0.0\n"
   "    y: 0.0\n"

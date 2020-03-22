@@ -6,6 +6,9 @@ function init(self)
 	self.druid:new_button("button", function()
 		monarch.back()
 	end)
+	self.druid:new_button("link", function()
+		sys.open_url("https://github.com/Insality/druid-assets")
+	end)
 end
 
 

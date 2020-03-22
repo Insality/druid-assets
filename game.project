@@ -15,9 +15,10 @@ input_method = HiddenInputField
 title = druid-assets
 version = 1.0.0
 dependencies = https://github.com/britzl/monarch/archive/3.1.0.zip,https://github.com/Insality/druid/archive/develop.zip
+custom_resources = /resources
 
 [graphics]
-texture_profiles = /druid-assets/default.texture_profiles
+texture_profiles = /druid-assets/system/default.texture_profiles
 
 [html5]
 show_fullscreen_button = 0

@@ -6,9 +6,9 @@ local component = require("druid.component")
 local M = component.create("progress_rich")
 
 local SCHEME = {
-	GREEN = "/progress_fill_inc",
-	RED = "/progress_fill_dec",
-	FILL = "/progress_fill",
+	GREEN = "progress_fill_inc",
+	RED = "progress_fill_dec",
+	FILL = "progress_fill",
 }
 
 function M.init(self, template_name, key, nodes)

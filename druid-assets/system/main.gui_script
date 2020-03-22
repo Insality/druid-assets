@@ -1,0 +1,54 @@
+local druid = require("druid.druid")
+local monarch = require("monarch.monarch")
+
+
+local function init_components(self)
+	local prefab = gui.get_node("prefab/root")
+	local components = json.decode(sys.load_resource("/resources/components.json")).components
+
+	for i = 1, #components do
+		local component = components[i]
+
+		local cloned = gui.clone_tree(prefab)
+		gui.set_text(cloned["prefab/button/button_text"], component.title)
+		gui.set_text(cloned["prefab/author_text"], component.author)
+		gui.set_text(cloned["prefab/info_text"], component.desc)
+
+		local is_enabled = false
+		gui.set_enabled(cloned["prefab/info_node"], is_enabled)
+		self.druid:new_button(cloned["prefab/info/button"], function()
+			is_enabled = not is_enabled
+			gui.set_enabled(cloned["prefab/info_node"], is_enabled)
+		end)
+
+		self.druid:new_button(cloned["prefab/button/button"], function()
+			monarch.show(component.collection_id)
+		end)
+
+		self.druid:new_blocker(cloned["prefab/info_node"])
+
+		self.grid:add(cloned["prefab/root"])
+	end
+
+	gui.set_enabled(prefab, false)
+end
+
+
+function init(self)
+	self.druid = druid.new(self)
+
+	self.scroll = self.druid:new_scroll("scroll_content", "scroll_input")
+	self.grid = self.druid:new_grid("scroll_content", "prefab/root")
+
+	init_components(self)
+end
+
+
+function update(self, dt)
+	self.druid:update(dt)
+end
+
+
+function on_input(self, action_id, action)
+	self.druid:on_input(action_id, action)
+end
