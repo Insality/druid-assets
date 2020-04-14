@@ -1,0 +1,24 @@
+local druid = require("druid.druid")
+local ps4_loader = require("components.ps4_loader.ps4_loader")
+
+function init(self)
+	self.druid = druid.new(self)
+
+	local ps4_loader_simple = self.druid:create(ps4_loader, "ps4_simple")
+	local ps4_loader_row = self.druid:create(ps4_loader, "ps4_row")
+
+	ps4_loader_simple:start()
+	ps4_loader_row:start()
+
+	self.druid:new_button("button_start/button", function()
+		ps4_loader_row:start()
+	end)
+	self.druid:new_button("button_stop/button", function()
+		ps4_loader_row:stop()
+	end)
+end
+
+
+function on_input(self, action_id, action)
+	return self.druid:on_input(action_id, action)
+end

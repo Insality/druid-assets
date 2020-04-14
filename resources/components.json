@@ -5,6 +5,12 @@
 			"title": "Rich progress bar",
 			"desc": "Progress bar with better visual changing",
 			"author": "Insality"
+		},
+		{
+			"collection_id": "ps4_loader",
+			"title": "PS4 loader example",
+			"desc": "Simple example of p4 loader icon",
+			"author": "Insality"
 		}
 	]
 }
