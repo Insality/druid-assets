@@ -15,10 +15,8 @@ local function init_components(self)
 		self.druid:new_text(cloned["prefab/button/button_text"], component.title)
 		self.druid:new_text(cloned["prefab/info_text"], component.desc)
 
-		local is_enabled = false
-		gui.set_enabled(cloned["prefab/info_node"], is_enabled)
-		self.druid:new_button(cloned["prefab/info/button"], function()
-			is_enabled = not is_enabled
+		gui.set_enabled(cloned["prefab/info_node"], false)
+		self.druid:new_hover(cloned["prefab/info/button"], function(_, is_enabled)
 			gui.set_enabled(cloned["prefab/info_node"], is_enabled)
 		end)
 
