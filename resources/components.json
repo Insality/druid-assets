@@ -11,6 +11,12 @@
 			"title": "PS4 loader example",
 			"desc": "Simple example of p4 loader icon",
 			"author": "Insality"
+		},
+		{
+			"collection_id": "buy_button",
+			"title": "Buy button example",
+			"desc": "Simple example complex button",
+			"author": "Insality"
 		}
 	]
 }
