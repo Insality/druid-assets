@@ -1,6 +1,3 @@
---- Component for rich progress component
--- @module druid.progress_rich
-
 local const = require("druid.const")
 local component = require("druid.component")
 
