@@ -1,0 +1,19 @@
+local druid = require("druid.druid")
+local rotating_input = require("components.rotating_input.rotating_input")
+
+
+local function on_change(self, value)
+	gui.set_text(gui.get_node("text_amount"), value)
+end
+
+
+function init(self)
+	self.druid = druid.new(self)
+
+	self.pin = self.druid:create(rotating_input, "rotating_input", on_change)
+end
+
+
+function on_input(self, action_id, action)
+	self.druid:on_input(action_id, action)
+end

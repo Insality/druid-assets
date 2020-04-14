@@ -17,6 +17,12 @@
 			"title": "Buy button example",
 			"desc": "Simple example complex button",
 			"author": "Insality"
+		},
+		{
+			"collection_id": "rotating_input",
+			"title": "Rotating pin example",
+			"desc": "Simple example of rotated input component",
+			"author": "Insality"
 		}
 	]
 }
