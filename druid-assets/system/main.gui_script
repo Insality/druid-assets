@@ -33,11 +33,18 @@ local function init_components(self)
 end
 
 
+local function on_window_callback(self, event, data)
+	druid.on_window_callback(event)
+end
+
+
 function init(self)
 	self.druid = druid.new(self)
 
 	self.scroll = self.druid:new_scroll("scroll_content", "scroll_input")
 	self.grid = self.druid:new_grid("scroll_content", "prefab/root")
+
+	window.set_listener(on_window_callback)
 
 	init_components(self)
 end

@@ -55,6 +55,12 @@ function init(self)
 end
 
 
+function final(self)
+	self.druid:final()
+end
+
+
+
 function update(self, dt)
 	self.druid:update(dt)
 end

@@ -23,6 +23,12 @@
 			"title": "Rotating pin example",
 			"desc": "Simple example of rotated input component",
 			"author": "Insality"
+		},
+		{
+			"collection_id": "rich_input",
+			"title": "Rich input example",
+			"desc": "Rich input with placeholders and cursor",
+			"author": "Insality"
 		}
 	]
 }
