@@ -3,7 +3,7 @@ local rotating_input = require("components.rotating_input.rotating_input")
 
 
 local function on_change(self, value)
-	gui.set_text(gui.get_node("text_amount"), value)
+	gui.set_text(gui.get_node("text_amount"), math.floor(value))
 end
 
 
