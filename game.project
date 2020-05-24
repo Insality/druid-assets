@@ -26,5 +26,5 @@ show_made_with_defold = 0
 heap_size = 128
 
 [library]
-include_dirs = components
+include_dirs = 
 
